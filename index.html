@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Feedback Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/stylesheet.css">
+    <script src="lib/jquery-2.2.4.min.js"></script>
+    <script src="lib/jquery.maskedinput.js"></script>
+    <script src="lib/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="styles/jquery-ui.css">
+</head>
+
+<body>
+    <form id="feedbackForm" action="">
+        <h1>Leave your feedback</h1>
+        <div id="fieldsWrapper">
+            <div class="formField">
+                <label>Name
+                    <input type="text" id="name" placeholder="Name" pattern="[a-zA-Z]{2,}*" maxlength="20" required>
+                </label>
+            </div>
+<!--
+            <div id="birthdayArea" class="formField selectArea">
+                <label>Birthday
+                    <select id="day">
+                        <option value="" disabled selected hidden>day</option>
+                    </select>
+                </label>
+                <select id="month">
+                    <option value="" disabled selected hidden>month</option>
+                </select>
+                <select id="year">
+                    <option value="" disabled selected hidden>year</option>
+                </select>
+                
+            </div>
+-->
+            <div class="formField">
+                <label>Birthday
+                    <input id="date" type="text" placeholder="mm/dd/yyyy"  required>
+                </label>
+                <div id="invalidAge" class="warnText">You must be older than 16</div>
+            </div>
+            <div class="formField">
+                <label>ID
+                    <input id="ID" type="text" placeholder="XX000000" pattern="\w{2}-[0-9]{6}" maxlength="8" required>
+                </label>
+            </div>
+            <div class="formField">
+                <label>E-mail
+                    <input id="email" type="email" placeholder="example@gmail.com" required>
+                </label>
+            </div>
+            <div id="genderArea" class="formField selectArea">
+                <label>Gender
+                    <select id="genderDropDown">
+                        <option value="" disabled selected hidden>I am...</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </label>
+                <div id="invalidGender" class="warnText">Choose your gender</div>
+            </div>
+            <div class="formField">
+                <label>Opinion
+                    <textarea id="opinion" rows="5" required></textarea>
+                </label>
+            </div>
+            <input type="submit" value="Send">
+        </div>
+    </form>
+    <script src="script.js"></script>
+</body>
+
+</html>
